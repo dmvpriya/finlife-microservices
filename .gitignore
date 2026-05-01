@@ -1,0 +1,20 @@
+# Maven
+*/target/
+*/.mvn/
+*/mvnw
+*/mvnw.cmd
+
+# IntelliJ
+*/.idea/
+*.iml
+
+# Node
+finlife-frontend/node_modules/
+finlife-frontend/build/
+
+# Environment
+*.env
+application-prod.properties
+
+# Logs
+*.log
