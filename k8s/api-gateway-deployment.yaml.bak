@@ -14,9 +14,8 @@ spec:
         app: api-gateway
     spec:
       containers:
-      - name: user-service
-        image: finlife/user-service:latest
-        imagePullPolicy: Never
+      - name: api-gateway
+        image: finlife/api-gateway:latest
         ports:
         - containerPort: 8080
         resources:

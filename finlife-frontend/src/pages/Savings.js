@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getSavings, addSavings,
-         addSavingsAmount } from '../services/api';
+         addSavingsAmount,
+         deleteSavingsGoal } from '../services/api';
 import { useNavigate } from 'react-router-dom';
-import { getSavings, addSavings,
-    addSavingsAmount,
-    deleteSavingsGoal } from '../services/api';
 
 const Savings = () => {
     const [goals, setGoals] = useState([]);

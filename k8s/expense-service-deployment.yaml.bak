@@ -14,9 +14,8 @@ spec:
         app: expense-service
     spec:
       containers:
-      - name: user-service
-        image: finlife/user-service:latest
-        imagePullPolicy: Never
+      - name: expense-service
+        image: finlife/expense-service:latest
         ports:
         - containerPort: 8082
         env:

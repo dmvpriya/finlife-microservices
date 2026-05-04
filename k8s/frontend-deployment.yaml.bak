@@ -13,10 +13,9 @@ spec:
       labels:
         app: frontend
     spec:
-     containers:
-      - name: user-service
-        image: finlife/user-service:latest
-        imagePullPolicy: Never
+      containers:
+      - name: frontend
+        image: finlife/frontend:latest
         ports:
         - containerPort: 3000
         resources:
