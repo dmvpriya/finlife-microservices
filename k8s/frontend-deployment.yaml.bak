@@ -13,11 +13,12 @@ spec:
       labels:
         app: frontend
     spec:
-      containers:
-      - name: frontend
-        image: finlife/frontend:latest
+     containers:
+      - name: user-service
+        image: finlife/user-service:latest
+        imagePullPolicy: Never
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         resources:
           requests:
             memory: "128Mi"
@@ -36,6 +37,6 @@ spec:
     app: frontend
   type: NodePort
   ports:
-  - port: 3000
-    targetPort: 3000
+  - port: 80
+    targetPort: 80
     nodePort: 30300
