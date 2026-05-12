@@ -102,13 +102,15 @@ const Dashboard = () => {
             </div>
 
             {/* Main Content */}
-            <div style={styles.main}>
-                <h1 style={styles.title}>
-                    Welcome back, {user?.firstName}! 👋
-                </h1>
+           <div style={styles.main}>
+    <div style={styles.contentWrapper}>   {/* 👈 ADD THIS */}
 
-                {/* Stats Cards */}
-                <div style={styles.cardsRow}>
+        <h1 style={styles.title}>
+            Welcome back, {user?.firstName}! 👋
+        </h1>
+
+        {/* Stats Cards */}
+        <div style={styles.cardsRow}>
                     <div style={{...styles.card,
                         background: 'linear-gradient(135deg, #0F3460, #6C63FF)'}}>
                         <p style={styles.cardLabel}>
@@ -292,6 +294,7 @@ const Dashboard = () => {
                         ))}
                     </div>
                 )}
+                </div>
             </div>
         </div>
     );
@@ -299,20 +302,30 @@ const Dashboard = () => {
 
 const styles = {
     container: {
-        display: 'flex',
-        minHeight: '100vh',
-        background: '#F0F2F5',
-    },
-    sidebar: {
-        width: '240px',
-        background: 'linear-gradient(180deg, #0F3460, #16213E)',
-        padding: '30px 20px',
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'fixed',
-        height: '100vh',
-        overflowY: 'auto',
-    },
+    display: 'flex',
+    minHeight: '100vh',
+    background: '#F0F2F5',
+    position: 'relative',
+},
+sidebar: {
+    width: '240px',
+    minWidth: '240px',
+    background: 'linear-gradient(180deg, #0F3460, #16213E)',
+    padding: '30px 20px',
+    position: 'fixed',
+    height: '100vh',
+    overflowY: 'auto',
+    zIndex: 100,
+    left: 0,
+    top: 0,
+},
+main: {
+    marginLeft: '240px',
+    padding: '30px',
+    minHeight: '100vh',
+    boxSizing: 'border-box',
+    width: 'calc(100vw - 240px)',
+},
     logo: {
         color: 'white',
         fontSize: '22px',
@@ -344,22 +357,14 @@ const styles = {
         fontSize: '14px',
         marginTop: '20px',
     },
-    main: {
-        marginLeft: '240px',
-        padding: '30px',
-        flex: 1,
-    },
-    title: {
-        fontSize: '24px',
-        color: '#0F3460',
-        marginBottom: '24px',
-    },
+    title: { fontSize: '24px', color: '#0F3460', marginBottom: '24px', paddingLeft: '0px' },
     cardsRow: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '20px',
-        marginBottom: '24px',
-    },
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gap: '16px',
+    marginBottom: '24px',
+    width: '100%',
+},
     card: {
         borderRadius: '16px',
         padding: '20px',
@@ -451,6 +456,11 @@ const styles = {
         fontSize: '24px',
         color: '#0F3460',
     },
+    contentWrapper: {
+    width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
+},
 };
 
 export default Dashboard;
