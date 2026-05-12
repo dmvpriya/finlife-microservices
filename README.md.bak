@@ -3,16 +3,6 @@
 A production-grade microservices-based personal finance 
 platform built with Java Spring Boot, React, and AI.
 
-Features:
-- Distributed microservices architecture
-- Event-driven communication using Kafka
-- API Gateway pattern
-- Independent database per service
-- Kubernetes deployment
-- JWT authentication
-- Async notification workflows
-- Production-inspired backend design
-
 ![Java](https://img.shields.io/badge/Java-21-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.5-green)
 ![React](https://img.shields.io/badge/React-18-blue)
